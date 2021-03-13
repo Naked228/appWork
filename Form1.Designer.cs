@@ -31,12 +31,16 @@ namespace appWork
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходAltF4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDBPath = new System.Windows.Forms.Button();
             this.btnXLPath = new System.Windows.Forms.Button();
             this.lblDBPath = new System.Windows.Forms.Label();
             this.lblXLPath = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lblTest0 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTest1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -45,25 +49,16 @@ namespace appWork
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(634, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // файлToolStripMenuItem
             // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.выходAltF4ToolStripMenuItem});
             this.файлToolStripMenuItem.Enabled = false;
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // выходAltF4ToolStripMenuItem
-            // 
-            this.выходAltF4ToolStripMenuItem.Name = "выходAltF4ToolStripMenuItem";
-            this.выходAltF4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выходAltF4ToolStripMenuItem.Text = "Выход";
-            this.выходAltF4ToolStripMenuItem.Click += new System.EventHandler(this.выходAltF4ToolStripMenuItem_Click);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(24, 20);
+            this.файлToolStripMenuItem.Text = "?";
             // 
             // btnDBPath
             // 
@@ -103,11 +98,52 @@ namespace appWork
             this.lblXLPath.TabIndex = 4;
             this.lblXLPath.Text = "Путь к файлу доработки";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 88);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
+            this.listBox1.Size = new System.Drawing.Size(113, 56);
+            this.listBox1.TabIndex = 5;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // lblTest0
+            // 
+            this.lblTest0.AutoSize = true;
+            this.lblTest0.Location = new System.Drawing.Point(146, 99);
+            this.lblTest0.Name = "lblTest0";
+            this.lblTest0.Size = new System.Drawing.Size(91, 13);
+            this.lblTest0.TabIndex = 6;
+            this.lblTest0.Text = "lblTest0. INFO";
+            this.lblTest0.Click += new System.EventHandler(this.lblTest0_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 171);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(610, 160);
+            this.dataGridView1.TabIndex = 7;
+            // 
+            // lblTest1
+            // 
+            this.lblTest1.AutoSize = true;
+            this.lblTest1.Location = new System.Drawing.Point(262, 155);
+            this.lblTest1.Name = "lblTest1";
+            this.lblTest1.Size = new System.Drawing.Size(55, 13);
+            this.lblTest1.TabIndex = 9;
+            this.lblTest1.Text = "lblTest1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 268);
+            this.ClientSize = new System.Drawing.Size(634, 341);
+            this.Controls.Add(this.lblTest1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblTest0);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblXLPath);
             this.Controls.Add(this.lblDBPath);
             this.Controls.Add(this.btnXLPath);
@@ -121,6 +157,7 @@ namespace appWork
             this.Text = "a p p W o r k";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,11 +167,14 @@ namespace appWork
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem выходAltF4ToolStripMenuItem;
         private System.Windows.Forms.Button btnDBPath;
         private System.Windows.Forms.Button btnXLPath;
         private System.Windows.Forms.Label lblDBPath;
         private System.Windows.Forms.Label lblXLPath;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lblTest0;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblTest1;
     }
 }
 
