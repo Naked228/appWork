@@ -39,6 +39,9 @@ namespace appWork
             this.lblTest0 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblTest1 = new System.Windows.Forms.Label();
+            this.btnAddToDB = new System.Windows.Forms.Button();
+            this.btnOpenDB = new System.Windows.Forms.Button();
+            this.btnOpenXL = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +69,7 @@ namespace appWork
             this.btnDBPath.Name = "btnDBPath";
             this.btnDBPath.Size = new System.Drawing.Size(113, 23);
             this.btnDBPath.TabIndex = 1;
-            this.btnDBPath.Text = "БД";
+            this.btnDBPath.Text = "База данных (DB)";
             this.btnDBPath.UseVisualStyleBackColor = true;
             this.btnDBPath.Click += new System.EventHandler(this.btnDBPath_Click);
             // 
@@ -111,6 +114,7 @@ namespace appWork
             // lblTest0
             // 
             this.lblTest0.AutoSize = true;
+            this.lblTest0.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold);
             this.lblTest0.Location = new System.Drawing.Point(146, 99);
             this.lblTest0.Name = "lblTest0";
             this.lblTest0.Size = new System.Drawing.Size(91, 13);
@@ -135,11 +139,44 @@ namespace appWork
             this.lblTest1.TabIndex = 9;
             this.lblTest1.Text = "lblTest1";
             // 
+            // btnAddToDB
+            // 
+            this.btnAddToDB.Location = new System.Drawing.Point(135, 121);
+            this.btnAddToDB.Name = "btnAddToDB";
+            this.btnAddToDB.Size = new System.Drawing.Size(113, 23);
+            this.btnAddToDB.TabIndex = 10;
+            this.btnAddToDB.Text = "Добавить в БД";
+            this.btnAddToDB.UseVisualStyleBackColor = true;
+            this.btnAddToDB.Click += new System.EventHandler(this.btnAddToDB_Click);
+            // 
+            // btnOpenDB
+            // 
+            this.btnOpenDB.Location = new System.Drawing.Point(509, 94);
+            this.btnOpenDB.Name = "btnOpenDB";
+            this.btnOpenDB.Size = new System.Drawing.Size(113, 23);
+            this.btnOpenDB.TabIndex = 11;
+            this.btnOpenDB.Text = "Открыть DB";
+            this.btnOpenDB.UseVisualStyleBackColor = true;
+            this.btnOpenDB.Click += new System.EventHandler(this.btnOpenDB_Click);
+            // 
+            // btnOpenXL
+            // 
+            this.btnOpenXL.Location = new System.Drawing.Point(509, 123);
+            this.btnOpenXL.Name = "btnOpenXL";
+            this.btnOpenXL.Size = new System.Drawing.Size(113, 23);
+            this.btnOpenXL.TabIndex = 12;
+            this.btnOpenXL.Text = "Открыть XL";
+            this.btnOpenXL.UseVisualStyleBackColor = true;
+            this.btnOpenXL.Click += new System.EventHandler(this.btnOpenXL_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 341);
+            this.Controls.Add(this.btnOpenXL);
+            this.Controls.Add(this.btnOpenDB);
+            this.Controls.Add(this.btnAddToDB);
             this.Controls.Add(this.lblTest1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblTest0);
@@ -172,9 +209,12 @@ namespace appWork
         private System.Windows.Forms.Label lblDBPath;
         private System.Windows.Forms.Label lblXLPath;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Label lblTest0;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblTest1;
+        private System.Windows.Forms.Button btnAddToDB;
+        private System.Windows.Forms.Button btnOpenDB;
+        private System.Windows.Forms.Button btnOpenXL;
+        public System.Windows.Forms.Label lblTest0;
     }
 }
 

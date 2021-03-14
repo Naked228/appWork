@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,15 +16,22 @@ namespace appWork
 {
     public partial class Form1 : Form
     {
+        //xl
         Excel.Range xlRange;
         Excel.Workbook xlBook;
         Excel.Worksheet xlSheet;
         int iLastRow, iLastCol, cnt;
 
+        //form variables
         public string DBPath;
         public string XLPath;
 
-        
+        //access
+        public static string connectDB;
+        private OleDbConnection newDBConnect;
+
+        tApp app = new tApp();
+
         public Form1()
         {
             InitializeComponent();
@@ -96,7 +105,6 @@ namespace appWork
 
             xlBook.Close(true);
             xlApp.Quit();
-           // xlApp.Quit();
             releaseObject(xlSheet);
             releaseObject(xlBook);
             releaseObject(xlApp);
@@ -131,6 +139,40 @@ namespace appWork
             _ = (this.Height == 190) ? this.Height = 380 : this.Height = 190;
         }
 
+        private void btnAddToDB_Click(object sender, EventArgs e)
+        {
+            if (DBPath != null)
+            {
+                //connect to db
+                connectDB = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + DBPath;
+                newDBConnect = new OleDbConnection(connectDB);
+                newDBConnect.Open();
+
+                //nado peredelat', chtobi dobavlyalos' v vibranniy list, v nujnie stolbi; nije prosto shablon;
+                string query = "INSERT INTO LIST5 (description, reg, enabled) VALUES ('new string', '7', false)";
+                OleDbCommand cmd = new OleDbCommand(query, newDBConnect);
+                cmd.ExecuteNonQuery();
+                lblTest0.Text = "Данные добавлены в БД";
+
+                //close connect to db
+                newDBConnect.Close();
+            }
+            else
+            {
+                lblTest0.Text = "Выберите БД";
+            }
+        }
+
+        private void btnOpenDB_Click(object sender, EventArgs e)
+        {
+            app.Run(DBPath, "DB");
+        }
+
+        private void btnOpenXL_Click(object sender, EventArgs e)
+        {
+            app.Run(XLPath, "XL");
+        }
+
         private static void releaseObject(object obj)
         {
             try
@@ -147,11 +189,6 @@ namespace appWork
             {
                 GC.Collect();
             }
-        }
-
-        private void выходAltF4ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
